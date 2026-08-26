@@ -128,7 +128,7 @@ podcast-knowledge-base/<podcast--id>/
 ├── metadata.json
 ├── episodes/       # One Markdown transcript per episode
 ├── raw/
-│   ├── audio/       # Present only when --keep-audio is requested
+│   ├── audio/       # Empty by default; files retained only with --keep-audio
 │   ├── metadata/    # Authoritative per-episode recovery sidecars
 │   └── transcripts/ # Raw ASR responses
 └── state/
