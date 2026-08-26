@@ -15,7 +15,7 @@ This v1 is a transcript-library builder. It does not perform host analysis, opin
 - Preserves timestamps, speaker labels, raw ASR output, episode metadata, `index.csv`, and resumable checkpoint state.
 - Resumes interrupted work, retries isolated failures, and incrementally processes newly published episodes.
 - Avoids duplicate paid ASR when stable IDs or signed media URLs change.
-- Deletes temporary audio after successful ASR unless `--keep-audio` is explicitly requested.
+- Submits public audio URLs directly to ASR; downloads and retains local audio under `raw/audio/` only when `--keep-audio` is explicitly requested.
 
 ## What it does not do
 
@@ -127,10 +127,12 @@ podcast-knowledge-base/<podcast--id>/
 ├── index.csv
 ├── metadata.json
 ├── episodes/       # One Markdown transcript per episode
-├── raw/            # Raw ASR responses
-├── metadata/       # Per-episode source metadata
-├── audio/          # Empty by default after successful ASR
-└── state/          # Checkpoint and source snapshot
+├── raw/
+│   ├── audio/       # Present only when --keep-audio is requested
+│   ├── metadata/    # Authoritative per-episode recovery sidecars
+│   └── transcripts/ # Raw ASR responses
+└── state/
+    └── checkpoint.json
 ```
 
 The Markdown transcript is a faithful source record. The tool adds punctuation, timestamps, and speaker breaks but does not summarize, polish, or remove substantial spoken language.
