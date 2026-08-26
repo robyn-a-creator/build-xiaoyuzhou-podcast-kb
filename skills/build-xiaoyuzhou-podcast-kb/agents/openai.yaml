@@ -1,0 +1,4 @@
+interface:
+  display_name: "免登录播客知识库"
+  short_description: "从公开 RSS 构建可恢复、可增量更新的播客逐字稿知识库"
+  default_prompt: "Use $build-xiaoyuzhou-podcast-kb to build a login-free transcript knowledge base from a Xiaoyuzhou podcast URL."

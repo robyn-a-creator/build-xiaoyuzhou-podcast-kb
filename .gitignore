@@ -1,0 +1,33 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Generated transcript libraries and media
+podcast-knowledge-base/
+knowledge-base/
+output/
+outputs/
+*.mp3
+*.m4a
+*.wav
+*.aac
+*.flac
+*.ogg
+*.opus
+*.audio
+
+# Local system files
+.DS_Store

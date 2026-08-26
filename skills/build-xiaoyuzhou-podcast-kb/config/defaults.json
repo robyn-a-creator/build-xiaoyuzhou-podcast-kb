@@ -1,0 +1,10 @@
+{
+  "asr_model": "qwen-audio-3.0-asr-flash-filetrans",
+  "asr_poll_seconds": 5,
+  "asr_max_wait_seconds": 14400,
+  "asr_max_retries": 5,
+  "language_hints": ["zh", "en"],
+  "hotword_limit": 200,
+  "hotword_weight": 5,
+  "max_episodes_per_run": 5
+}
